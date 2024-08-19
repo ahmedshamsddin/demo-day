@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator App</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="calculator">
+            <input type="text" id="display" class="calculator-screen form-control" disabled>
+            
+            <!-- Row for Clear and Division -->
+            <div class="row">
+                <div class="col-9">
+                    <div class="btn-group btn-group-lg btn-block">
+                        <button class="btn btn-clear btn-block" onclick="clearDisplay()">C</button>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="btn-group btn-group-lg btn-block">
+                        <button id="divideButton" class="btn btn-operation btn-block" onclick="appendOperator('/')">/</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row for Numbers 7, 8, 9 and Multiply -->
+            <div class="row">
+                <div class="col-9">
+                    <div class="btn-group btn-group-lg btn-block">
+                        <button class="btn btn-light btn-block" onclick="appendNumber('7')">7</button>
+                        <button class="btn btn-light btn-block" onclick="appendNumber('8')">8</button>
+                        <button class="btn btn-light btn-block" onclick="appendNumber('9')">9</button>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="btn-group btn-group-lg btn-block">
+                        <button id="multiplyButton" class="btn btn-operation btn-block" onclick="appendOperator('*')">*</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row for Numbers 4, 5, 6 and Subtract -->
+            <div class="row">
+                <div class="col-9">
+                    <div class="btn-group btn-group-lg btn-block">
+                        <button class="btn btn-light btn-block" onclick="appendNumber('4')">4</button>
+                        <button class="btn btn-light btn-block" onclick="appendNumber('5')">5</button>
+                        <button class="btn btn-light btn-block" onclick="appendNumber('6')">6</button>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="btn-group btn-group-lg btn-block">
+                        <button id="subtractButton" class="btn btn-operation btn-block" onclick="appendOperator('-')">-</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row for Numbers 1, 2, 3 and Addition -->
+            <div class="row">
+                <div class="col-9">
+                    <div class="btn-group btn-group-lg btn-block">
+                        <button class="btn btn-light btn-block" onclick="appendNumber('1')">1</button>
+                        <button class="btn btn-light btn-block" onclick="appendNumber('2')">2</button>
+                        <button class="btn btn-light btn-block" onclick="appendNumber('3')">3</button>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="btn-group btn-group-lg btn-block">
+                        <button id="addButton" class="btn btn-operation btn-block" onclick="appendOperator('+')">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row for 0, Dot, and Equals -->
+            <div class="row">
+                <div class="col-9">
+                    <div class="btn-group btn-group-lg btn-block">
+                        <button class="btn btn-light btn-block" onclick="appendNumber('0')">0</button>
+                        <button class="btn btn-light btn-block" onclick="appendNumber('.')">.</button>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="btn-group btn-group-lg btn-block">
+                        <button class="btn btn-equal btn-block" onclick="calculate()">=</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row for Power, Square Root, and Factorial -->
+            <div class="row">
+                <div class="col-4">
+                    <div class="btn-group btn-group-lg btn-block">
+                        <button id="powerButton" class="btn btn-operation btn-block" onclick="appendOperator('^')">^</button>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="btn-group btn-group-lg btn-block">
+                        <button id="sqrtButton" class="btn btn-operation btn-block" onclick="calculateSqrt()">√</button>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="btn-group btn-group-lg btn-block">
+                        <button id="factorialButton" class="btn btn-operation btn-block" onclick="calculateFactorial()">x!</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="updateScreen.js"></script>
+</body>
+</html>
